@@ -1,0 +1,40 @@
+@import "../constants/theme";
+@import "../../node_modules/bootstrap/scss/mixins";
+
+
+.file-upload {
+  padding: 0 !important;
+  &.disabled {
+    
+    cursor: pointer;
+    label {
+      pointer-events: none !important;
+    }
+  }
+  &:focus-within {
+    color: $input-focus-color;
+    background-color: $input-focus-bg;
+    border-color: $input-focus-border-color;
+    outline: 0;
+    @if $enable-shadows {
+      box-shadow: $input-box-shadow, $input-focus-box-shadow;
+    } @else {
+      box-shadow: $input-focus-box-shadow;
+    }
+  }
+
+  label {
+    margin: 0 !important;
+    border: none !important;
+  }
+ 
+  
+  input {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+  }
+}

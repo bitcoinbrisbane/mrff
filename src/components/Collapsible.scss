@@ -1,0 +1,17 @@
+@import "../constants/mixins";
+@import "../constants/colors";
+
+.collapsible {
+
+		box-sizing: border-box;
+		max-height: 0;
+		overflow: hidden;
+		transition: max-height 200ms cubic-bezier(0, 1, 0, 1);
+		padding: 0;
+
+		&.open {
+			padding: 1rem;
+			max-height: 1000px;
+			transition: max-height 400ms ease-in-out;
+		}
+}
